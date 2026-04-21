@@ -6,7 +6,8 @@
 
 <p align="center">
   <a href="https://brightbenchmark.github.io/"><img src="https://img.shields.io/badge/BRIGHT_Benchmark-Rank_1st-8A2BE2" alt="Rank"></a>
-  <a href="https://huggingface.co/ForwardAILabs/MRE-T1"><img src="https://img.shields.io/badge/🤗_HuggingFace-MRE--T1-yellow" alt="Model"></a>
+  <a href="https://huggingface.co/ForwardAILabs/MRE-T1"><img src="https://img.shields.io/badge/🤗_HuggingFace-MRE--T1-yellow" alt="Retriever"></a>
+  <a href="https://huggingface.co/ForwardAILabs/MQR-A1"><img src="https://img.shields.io/badge/🤗_HuggingFace-MQR--A1-orange" alt="Rewriter"></a>
   <a href="https://www.mira.day/"><img src="https://img.shields.io/badge/Forward_AI_Labs-mira.day-green" alt="Company"></a>
   <a href="#"><img src="https://img.shields.io/badge/Pipeline-YAML_Driven-blue" alt="Pipeline"></a>
   <a href="#"><img src="https://img.shields.io/badge/Training-GRPO_Aligned-red" alt="Training"></a>
