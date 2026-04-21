@@ -1,4 +1,4 @@
-<h1 align="center">⚡ MQR-A1 + MRE-T1 Pipeline</h1>
+<h1 align="center">⚡ Mira-Reasoning-Retrieval</h1>
 
 <p align="center">
   <strong>Reinforcement Learning-Driven Intent Alignment: Overcoming Surface Semantic Traps in Retrieval</strong>
