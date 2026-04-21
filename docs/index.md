@@ -6,6 +6,8 @@
 
 <p align="center">
   <a href="https://brightbenchmark.github.io/"><img src="https://img.shields.io/badge/BRIGHT_Benchmark-Rank_1st-8A2BE2" alt="Rank"></a>
+  <a href="https://huggingface.co/ForwardAILabs/MRE-T1"><img src="https://img.shields.io/badge/🤗_HuggingFace-MRE--T1-yellow" alt="Model"></a>
+  <a href="https://www.mira.day/"><img src="https://img.shields.io/badge/Forward_AI_Labs-mira.day-green" alt="Company"></a>
   <a href="#"><img src="https://img.shields.io/badge/Pipeline-YAML_Driven-blue" alt="Pipeline"></a>
   <a href="#"><img src="https://img.shields.io/badge/Training-GRPO_Aligned-red" alt="Training"></a>
 </p>
@@ -62,6 +64,7 @@ Our Multi-Dimensional Reward Function includes:
 **FAL-Aligner + MRE-T1** achieves state-of-the-art results on the rigorous BRIGHT Benchmark. The system demonstrates categorical dominance by securing the No. 1 position across all evaluated dimensions, including both short and long document tracks. Notably, our framework outperforms both existing query alignment models and complex, resource-heavy agentic pipelines, establishing a new performance frontier in reasoning-intensive retrieval.
 
 1、**Single-model Methods on Short Documents**
+
 | Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Leet. | Pony | AoPS | TheoQ. | TheoT. | Avg | 
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | MRE-T1 | 55.3 | 56.5 | 32.9 | **48.2** | 33.1 | 34.2 | 37.3 | 35.0 | **35.5** | **16.7** | **43.3** | 46.9 | **39.6** |
@@ -76,6 +79,7 @@ Our Multi-Dimensional Reward Function includes:
 | bge-large-en-v1.5 | 1.7 | 24.6 | 16.6 | 17.5 | 11.7 | 10.8 | 13.3 | 26.7 | 5.7 | 6.0 | 13.0 | 6.9 | 13.7 |
 
 2、**Retrieval Pipelines on Short Documents**
+
 | Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Leet. | Pony | AoPS | TheoQ. | TheoT. | Avg | 
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **MRE-T1-Pipeline (FAL + T1)** | **86.7** | **78.5** | 69.7 | **78.2** | **58.4** | **67.0** | **65.9** | 46.8 | **73.4** | 45.2 | **60.6** | **72.3** | **66.9** |
@@ -91,6 +95,7 @@ Our Multi-Dimensional Reward Function includes:
 | ReasonIR with Rank-R1 | 59.5 | 55.1 | 37.9 | 52.7 | 30.0 | 39.3 | 45.1 | 32.1 | 17.1 | 10.7 | 40.4 | 45.6 | 38.8 |
 
 3、**Single-model Methods on Long Documents**
+
 | Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Pony | Avg | 
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | MRE-T1 | **46.5** | **46** | **34.5** | **52.7** | **27.7** | **22.2** | **45.2** | **6.3** | **35.1** |
@@ -109,6 +114,7 @@ Our Multi-Dimensional Reward Function includes:
 | BM25 | 10.7 | 15.4 | 10.7 | 8.4 | 7.4 | 22.2 | 10.7 | 5.4 | 11.4 |
 
 4、**Retrieval Pipelines on Long Documents**
+
 | Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Pony | Avg | 
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **MRE-T1-Pipeline (FAL + T1)** | **77.1** | 59.0 | **71.2** | 73.8 | 46.0 | **35.5** | **70.6** | **14.6** | **56.0** |
