@@ -62,7 +62,7 @@ Our Multi-Dimensional Reward Function includes:
 
 ## 🏆 Performance
 
-**MQR-A1 + MRE-T1** achieves state-of-the-art results on the rigorous BRIGHT Benchmark. The system demonstrates categorical dominance by securing the No. 1 position across all evaluated dimensions, including both short and long document tracks. Notably, our framework outperforms both existing query alignment models and complex, resource-heavy agentic pipelines, establishing a new performance frontier in reasoning-intensive retrieval.
+**Mira-Reasoning-Retrieval** (the combined pipeline of MQR-A1 query rewriter and MRE-T1 retriever) achieves state-of-the-art results on the rigorous BRIGHT Benchmark. The system demonstrates categorical dominance by securing the No. 1 position across all evaluated dimensions, including both short and long document tracks. Notably, our framework outperforms both existing query alignment models and complex, resource-heavy agentic pipelines, establishing a new performance frontier in reasoning-intensive retrieval.
 
 1、**Single-model Methods on Short Documents**
 
@@ -272,7 +272,7 @@ Our Multi-Dimensional Reward Function includes:
 </thead>
 <tbody>
 <tr>
-  <td align="left"><b>MRE-T1-Pipeline (MQR-A1 + T1)</b></td>
+  <td align="left"><b>Mira-Reasoning-Retrieval</b></td>
   <td align="center"><b>86.7</b></td>
   <td align="center"><b>78.5</b></td>
   <td align="center">69.7</td>
@@ -449,6 +449,7 @@ Our Multi-Dimensional Reward Function includes:
 </tr>
 </tbody>
 </table>
+
 
 3、**Single-model Methods on Long Documents**
 
@@ -658,7 +659,7 @@ Our Multi-Dimensional Reward Function includes:
 </thead>
 <tbody>
 <tr>
-  <td align="left"><b>MRE-T1-Pipeline (MQR-A1 + T1)</b></td>
+  <td align="left"><b>Mira-Reasoning-Retrieval</b></td>
   <td align="center"><b>77.1</b></td>
   <td align="center">59.0</td>
   <td align="center"><b>71.2</b></td>
@@ -683,3 +684,4 @@ Our Multi-Dimensional Reward Function includes:
 </tr>
 </tbody>
 </table>
+
