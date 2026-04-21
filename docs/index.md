@@ -65,57 +65,620 @@ Our Multi-Dimensional Reward Function includes:
 
 1、**Single-model Methods on Short Documents**
 
-| Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Leet. | Pony | AoPS | TheoQ. | TheoT. | Avg | 
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MRE-T1 | 55.3 | 56.5 | 32.9 | **48.2** | 33.1 | 34.2 | 37.3 | 35.0 | **35.5** | **16.7** | **43.3** | 46.9 | **39.6** |
-| llama-nv-embed-reasoning-3b | **63.4** | **60.2** | **39.5** | 45.5 | 32.6 | 34.0 | **43.3** | 37.5 | 15.0 | 10.5 | 39.5 | 38.5 | 38.3 |
-| ReasonEmbed-Qwen3-8B-0928 | 55.5 | 56.6 | 36.2 | 47.4 | **35.3** | **36.6** | 39.1 | 33.6 | 16.4 | 12.5 | 41.4 | **47.2** | 38.2 |
-| ReasonEmbed-Qwen3-4B-0928 | 55.4 | 54.5 | 34.9 | 46.9 | 34.0 | 36.1 | 37.4 | 34.5 | 13.6 | 11.3 | 41.4 | 45.1 | 37.1 |
-| Seed-1.5-Embedding | 34.8 | 46.9 | 23.4 | 31.6 | 19.1 | 25.4 | 21.0 | **43.2** | 4.9 | 12.2 | 33.3 | 30.5 | 27.2 |
-| inf-retriever-v1-pro | 37.8 | 39.7 | 26.2 | 34.4 | 20.1 | 22.6 | 26.3 | 38.3 | 1.9 | 13.6 | 30.5 | 25.5 | 26.4 |
-| ReasonIR-8B | 26.2 | 31.4 | 23.3 | 30.0 | 18.0 | 23.9 | 20.5 | 35.0 | 10.5 | 14.7 | 31.9 | 27.2 | 24.4 |
-| Qwen3-Embedding-8B | 21.0 | 33.8 | 18.6 | 27.8 | 15.6 | 18.6 | 17.1 | 33.5 | 1.2 | 9.5 | 40.6 | 39.6 | 23.1 |
-| bm25 | 18.9 | 27.2 | 14.9 | 12.5 | 13.6 | 18.4 | 15.0 | 24.4 | 7.9 | 6.2 | 10.4 | 4.9 | 14.5 |
-| bge-large-en-v1.5 | 1.7 | 24.6 | 16.6 | 17.5 | 11.7 | 10.8 | 13.3 | 26.7 | 5.7 | 6.0 | 13.0 | 6.9 | 13.7 |
+<table>
+<thead>
+<tr>
+  <th align="left">Model</th>
+  <th align="center">Bio.</th>
+  <th align="center">Earth.</th>
+  <th align="center">Econ.</th>
+  <th align="center">Psy.</th>
+  <th align="center">Rob.</th>
+  <th align="center">Stack.</th>
+  <th align="center">Sus.</th>
+  <th align="center">Leet.</th>
+  <th align="center">Pony</th>
+  <th align="center">AoPS</th>
+  <th align="center">TheoQ.</th>
+  <th align="center">TheoT.</th>
+  <th align="center">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left">MRE-T1</td>
+  <td align="center">55.3</td>
+  <td align="center">56.5</td>
+  <td align="center">32.9</td>
+  <td align="center"><b>48.2</b></td>
+  <td align="center">33.1</td>
+  <td align="center">34.2</td>
+  <td align="center">37.3</td>
+  <td align="center">35.0</td>
+  <td align="center"><b>35.5</b></td>
+  <td align="center"><b>16.7</b></td>
+  <td align="center"><b>43.3</b></td>
+  <td align="center">46.9</td>
+  <td align="center"><b>39.6</b></td>
+</tr>
+<tr>
+  <td align="left">llama-nv-embed-reasoning-3b</td>
+  <td align="center"><b>63.4</b></td>
+  <td align="center"><b>60.2</b></td>
+  <td align="center"><b>39.5</b></td>
+  <td align="center">45.5</td>
+  <td align="center">32.6</td>
+  <td align="center">34.0</td>
+  <td align="center"><b>43.3</b></td>
+  <td align="center">37.5</td>
+  <td align="center">15.0</td>
+  <td align="center">10.5</td>
+  <td align="center">39.5</td>
+  <td align="center">38.5</td>
+  <td align="center">38.3</td>
+</tr>
+<tr>
+  <td align="left">ReasonEmbed-Qwen3-8B-0928</td>
+  <td align="center">55.5</td>
+  <td align="center">56.6</td>
+  <td align="center">36.2</td>
+  <td align="center">47.4</td>
+  <td align="center"><b>35.3</b></td>
+  <td align="center"><b>36.6</b></td>
+  <td align="center">39.1</td>
+  <td align="center">33.6</td>
+  <td align="center">16.4</td>
+  <td align="center">12.5</td>
+  <td align="center">41.4</td>
+  <td align="center"><b>47.2</b></td>
+  <td align="center">38.2</td>
+</tr>
+<tr>
+  <td align="left">ReasonEmbed-Qwen3-4B-0928</td>
+  <td align="center">55.4</td>
+  <td align="center">54.5</td>
+  <td align="center">34.9</td>
+  <td align="center">46.9</td>
+  <td align="center">34.0</td>
+  <td align="center">36.1</td>
+  <td align="center">37.4</td>
+  <td align="center">34.5</td>
+  <td align="center">13.6</td>
+  <td align="center">11.3</td>
+  <td align="center">41.4</td>
+  <td align="center">45.1</td>
+  <td align="center">37.1</td>
+</tr>
+<tr>
+  <td align="left">Seed-1.5-Embedding</td>
+  <td align="center">34.8</td>
+  <td align="center">46.9</td>
+  <td align="center">23.4</td>
+  <td align="center">31.6</td>
+  <td align="center">19.1</td>
+  <td align="center">25.4</td>
+  <td align="center">21.0</td>
+  <td align="center"><b>43.2</b></td>
+  <td align="center">4.9</td>
+  <td align="center">12.2</td>
+  <td align="center">33.3</td>
+  <td align="center">30.5</td>
+  <td align="center">27.2</td>
+</tr>
+<tr>
+  <td align="left">inf-retriever-v1-pro</td>
+  <td align="center">37.8</td>
+  <td align="center">39.7</td>
+  <td align="center">26.2</td>
+  <td align="center">34.4</td>
+  <td align="center">20.1</td>
+  <td align="center">22.6</td>
+  <td align="center">26.3</td>
+  <td align="center">38.3</td>
+  <td align="center">1.9</td>
+  <td align="center">13.6</td>
+  <td align="center">30.5</td>
+  <td align="center">25.5</td>
+  <td align="center">26.4</td>
+</tr>
+<tr>
+  <td align="left">ReasonIR-8B</td>
+  <td align="center">26.2</td>
+  <td align="center">31.4</td>
+  <td align="center">23.3</td>
+  <td align="center">30.0</td>
+  <td align="center">18.0</td>
+  <td align="center">23.9</td>
+  <td align="center">20.5</td>
+  <td align="center">35.0</td>
+  <td align="center">10.5</td>
+  <td align="center">14.7</td>
+  <td align="center">31.9</td>
+  <td align="center">27.2</td>
+  <td align="center">24.4</td>
+</tr>
+<tr>
+  <td align="left">Qwen3-Embedding-8B</td>
+  <td align="center">21.0</td>
+  <td align="center">33.8</td>
+  <td align="center">18.6</td>
+  <td align="center">27.8</td>
+  <td align="center">15.6</td>
+  <td align="center">18.6</td>
+  <td align="center">17.1</td>
+  <td align="center">33.5</td>
+  <td align="center">1.2</td>
+  <td align="center">9.5</td>
+  <td align="center">40.6</td>
+  <td align="center">39.6</td>
+  <td align="center">23.1</td>
+</tr>
+<tr>
+  <td align="left">bm25</td>
+  <td align="center">18.9</td>
+  <td align="center">27.2</td>
+  <td align="center">14.9</td>
+  <td align="center">12.5</td>
+  <td align="center">13.6</td>
+  <td align="center">18.4</td>
+  <td align="center">15.0</td>
+  <td align="center">24.4</td>
+  <td align="center">7.9</td>
+  <td align="center">6.2</td>
+  <td align="center">10.4</td>
+  <td align="center">4.9</td>
+  <td align="center">14.5</td>
+</tr>
+<tr>
+  <td align="left">bge-large-en-v1.5</td>
+  <td align="center">1.7</td>
+  <td align="center">24.6</td>
+  <td align="center">16.6</td>
+  <td align="center">17.5</td>
+  <td align="center">11.7</td>
+  <td align="center">10.8</td>
+  <td align="center">13.3</td>
+  <td align="center">26.7</td>
+  <td align="center">5.7</td>
+  <td align="center">6.0</td>
+  <td align="center">13.0</td>
+  <td align="center">6.9</td>
+  <td align="center">13.7</td>
+</tr>
+</tbody>
+</table>
 
 2、**Retrieval Pipelines on Short Documents**
 
-| Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Leet. | Pony | AoPS | TheoQ. | TheoT. | Avg | 
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **MRE-T1-Pipeline (FAL + T1)** | **86.7** | **78.5** | 69.7 | **78.2** | **58.4** | **67.0** | **65.9** | 46.8 | **73.4** | 45.2 | **60.6** | **72.3** | **66.9** |
-| INF-X-Retriever (inf+retrieve) | 79.8 | 70.9 | **69.9** | 73.3 | 57.7 | 64.3 | 61.9 | **56.1** | 54.5 | **51.9** | 53.1 | 67.9 | 63.4 |
-| RakanEmb4B (inf+retrieve) | 65.9 | 56.9 | 59.0 | 60.7 | 49.0 | 52.8 | 53.3 | 35.6 | 55.4 | 22.0 | 53.9 | 64.5 | 52.4 |
-| Nemo Retriever's Agentic Retrieval | 72.8 | 66.0 | 48.7 | 59.6 | 52.5 | 47.1 | 50.2 | 49.3 | 42.1 | 21.0 | 53.3 | 48.0 | 50.9 |
-| DIVER-v3-GroupRank | 66.0 | 63.7 | 42.4 | 55.0 | 40.6 | 44.7 | 50.4 | 32.5 | 47.3 | 17.2 | 46.4 | 55.6 | 46.8 |
-| BGE-Reasoner-0928 | 68.5 | 66.4 | 40.6 | 53.1 | 43.2 | 44.1 | 47.8 | 29.0 | 41.6 | 17.2 | 46.5 | 58.4 | 46.4 |
-| Lattice Hierarchical Retrieval | 64.4 | 62.4 | 45.4 | 57.4 | 47.6 | 37.6 | 46.4 | 19.9 | 34.0 | 12.0 | 30.1 | 47.8 | 42.1 |
-| ReasonRank (rerank RaDer) | 62.7 | 55.5 | 36.7 | 54.6 | 35.7 | 38.0 | 44.8 | 29.5 | 25.6 | 14.4 | 42.0 | 50.1 | 40.8 |
-| XRR2 | 63.1 | 55.4 | 38.5 | 52.9 | 37.1 | 38.2 | 44.6 | 21.9 | 35.0 | 15.7 | 34.4 | 46.2 | 40.3 |
-| RaDeR with Qwen reranking | 58.0 | 59.2 | 33.0 | 49.4 | 31.8 | 39.0 | 36.4 | 33.5 | 33.3 | 10.8 | 34.2 | 51.6 | 39.2 |
-| ReasonIR with Rank-R1 | 59.5 | 55.1 | 37.9 | 52.7 | 30.0 | 39.3 | 45.1 | 32.1 | 17.1 | 10.7 | 40.4 | 45.6 | 38.8 |
+<table>
+<thead>
+<tr>
+  <th align="left">Model</th>
+  <th align="center">Bio.</th>
+  <th align="center">Earth.</th>
+  <th align="center">Econ.</th>
+  <th align="center">Psy.</th>
+  <th align="center">Rob.</th>
+  <th align="center">Stack.</th>
+  <th align="center">Sus.</th>
+  <th align="center">Leet.</th>
+  <th align="center">Pony</th>
+  <th align="center">AoPS</th>
+  <th align="center">TheoQ.</th>
+  <th align="center">TheoT.</th>
+  <th align="center">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left"><b>MRE-T1-Pipeline (FAL + T1)</b></td>
+  <td align="center"><b>86.7</b></td>
+  <td align="center"><b>78.5</b></td>
+  <td align="center">69.7</td>
+  <td align="center"><b>78.2</b></td>
+  <td align="center"><b>58.4</b></td>
+  <td align="center"><b>67.0</b></td>
+  <td align="center"><b>65.9</b></td>
+  <td align="center">46.8</td>
+  <td align="center"><b>73.4</b></td>
+  <td align="center">45.2</td>
+  <td align="center"><b>60.6</b></td>
+  <td align="center"><b>72.3</b></td>
+  <td align="center"><b>66.9</b></td>
+</tr>
+<tr>
+  <td align="left">INF-X-Retriever (inf+retrieve)</td>
+  <td align="center">79.8</td>
+  <td align="center">70.9</td>
+  <td align="center"><b>69.9</b></td>
+  <td align="center">73.3</td>
+  <td align="center">57.7</td>
+  <td align="center">64.3</td>
+  <td align="center">61.9</td>
+  <td align="center"><b>56.1</b></td>
+  <td align="center">54.5</td>
+  <td align="center"><b>51.9</b></td>
+  <td align="center">53.1</td>
+  <td align="center">67.9</td>
+  <td align="center">63.4</td>
+</tr>
+<tr>
+  <td align="left">RakanEmb4B (inf+retrieve)</td>
+  <td align="center">65.9</td>
+  <td align="center">56.9</td>
+  <td align="center">59.0</td>
+  <td align="center">60.7</td>
+  <td align="center">49.0</td>
+  <td align="center">52.8</td>
+  <td align="center">53.3</td>
+  <td align="center">35.6</td>
+  <td align="center">55.4</td>
+  <td align="center">22.0</td>
+  <td align="center">53.9</td>
+  <td align="center">64.5</td>
+  <td align="center">52.4</td>
+</tr>
+<tr>
+  <td align="left">Nemo Retriever's Agentic Retrieval</td>
+  <td align="center">72.8</td>
+  <td align="center">66.0</td>
+  <td align="center">48.7</td>
+  <td align="center">59.6</td>
+  <td align="center">52.5</td>
+  <td align="center">47.1</td>
+  <td align="center">50.2</td>
+  <td align="center">49.3</td>
+  <td align="center">42.1</td>
+  <td align="center">21.0</td>
+  <td align="center">53.3</td>
+  <td align="center">48.0</td>
+  <td align="center">50.9</td>
+</tr>
+<tr>
+  <td align="left">DIVER-v3-GroupRank</td>
+  <td align="center">66.0</td>
+  <td align="center">63.7</td>
+  <td align="center">42.4</td>
+  <td align="center">55.0</td>
+  <td align="center">40.6</td>
+  <td align="center">44.7</td>
+  <td align="center">50.4</td>
+  <td align="center">32.5</td>
+  <td align="center">47.3</td>
+  <td align="center">17.2</td>
+  <td align="center">46.4</td>
+  <td align="center">55.6</td>
+  <td align="center">46.8</td>
+</tr>
+<tr>
+  <td align="left">BGE-Reasoner-0928</td>
+  <td align="center">68.5</td>
+  <td align="center">66.4</td>
+  <td align="center">40.6</td>
+  <td align="center">53.1</td>
+  <td align="center">43.2</td>
+  <td align="center">44.1</td>
+  <td align="center">47.8</td>
+  <td align="center">29.0</td>
+  <td align="center">41.6</td>
+  <td align="center">17.2</td>
+  <td align="center">46.5</td>
+  <td align="center">58.4</td>
+  <td align="center">46.4</td>
+</tr>
+<tr>
+  <td align="left">Lattice Hierarchical Retrieval</td>
+  <td align="center">64.4</td>
+  <td align="center">62.4</td>
+  <td align="center">45.4</td>
+  <td align="center">57.4</td>
+  <td align="center">47.6</td>
+  <td align="center">37.6</td>
+  <td align="center">46.4</td>
+  <td align="center">19.9</td>
+  <td align="center">34.0</td>
+  <td align="center">12.0</td>
+  <td align="center">30.1</td>
+  <td align="center">47.8</td>
+  <td align="center">42.1</td>
+</tr>
+<tr>
+  <td align="left">ReasonRank (rerank RaDer)</td>
+  <td align="center">62.7</td>
+  <td align="center">55.5</td>
+  <td align="center">36.7</td>
+  <td align="center">54.6</td>
+  <td align="center">35.7</td>
+  <td align="center">38.0</td>
+  <td align="center">44.8</td>
+  <td align="center">29.5</td>
+  <td align="center">25.6</td>
+  <td align="center">14.4</td>
+  <td align="center">42.0</td>
+  <td align="center">50.1</td>
+  <td align="center">40.8</td>
+</tr>
+<tr>
+  <td align="left">XRR2</td>
+  <td align="center">63.1</td>
+  <td align="center">55.4</td>
+  <td align="center">38.5</td>
+  <td align="center">52.9</td>
+  <td align="center">37.1</td>
+  <td align="center">38.2</td>
+  <td align="center">44.6</td>
+  <td align="center">21.9</td>
+  <td align="center">35.0</td>
+  <td align="center">15.7</td>
+  <td align="center">34.4</td>
+  <td align="center">46.2</td>
+  <td align="center">40.3</td>
+</tr>
+<tr>
+  <td align="left">RaDeR with Qwen reranking</td>
+  <td align="center">58.0</td>
+  <td align="center">59.2</td>
+  <td align="center">33.0</td>
+  <td align="center">49.4</td>
+  <td align="center">31.8</td>
+  <td align="center">39.0</td>
+  <td align="center">36.4</td>
+  <td align="center">33.5</td>
+  <td align="center">33.3</td>
+  <td align="center">10.8</td>
+  <td align="center">34.2</td>
+  <td align="center">51.6</td>
+  <td align="center">39.2</td>
+</tr>
+<tr>
+  <td align="left">ReasonIR with Rank-R1</td>
+  <td align="center">59.5</td>
+  <td align="center">55.1</td>
+  <td align="center">37.9</td>
+  <td align="center">52.7</td>
+  <td align="center">30.0</td>
+  <td align="center">39.3</td>
+  <td align="center">45.1</td>
+  <td align="center">32.1</td>
+  <td align="center">17.1</td>
+  <td align="center">10.7</td>
+  <td align="center">40.4</td>
+  <td align="center">45.6</td>
+  <td align="center">38.8</td>
+</tr>
+</tbody>
+</table>
 
 3、**Single-model Methods on Long Documents**
 
-| Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Pony | Avg | 
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MRE-T1 | **46.5** | **46** | **34.5** | **52.7** | **27.7** | **22.2** | **45.2** | **6.3** | **35.1** |
-| Google-Gecko-Text_Embedding-004 | - | - | - | - | - | - | - | - | 33.2 |
-| inf-retriever-v1-pro | 44.1 | 42.2 | 31.4 | 43.1 | 20.8 | 21.4 | 41.0 | 0.4 | 30.5 |
-| gte-Qwen1.5-7B-instruct | 39.2 | 36.1 | 25.7 | 42.3 | 21.3 | 23.5 | 33.1 | 1.3 | 27.8 |
-| SFR-Embedding-Mistral | 30.3 | 37.0 | 24.3 | 47.7 | 17.3 | 14.5 | 35.0 | 2.0 | 26.0 |
-| GritLM-7B | 37.5 | 40.3 | 25.7 | 34.4 | 17.8 | 20.1 | 32.4 | 0.0 | 26.0 |
-| e5-mistral-7b-instruct | 29.9 | 36.3 | 26.2 | 46.7 | 17.3 | 14.5 | 32.2 | 1.1 | 25.5 |
-| voyage-large-2-instruct | 34.4 | 35.4 | 26.7 | 41.6 | 12.9 | 12.8 | 31.1 | 1.3 | 24.5 |
-| (Google) text-embedding-preview0409 | 30.9 | 38.0 | 21.9 | 30.7 | 12.9 | 19.2 | 25.7 | 0.3 | 22.4 |
-| (OpenAI) text-embedding-3-large | 32.1 | 31.4 | 23.8 | 34.2 | 11.9 | 10.7 | 26.3 | 0.0 | 21.3 |
-| Cohere-embed-english-v3.0 | 31.5 | 34.5 | 18.9 | 20.5 | 9.9 | 15.8 | 15.2 | 0.8 | 18.4 |
-| SBERT | 25.6 | 34.1 | 18.9 | 15.8 | 10.9 | 15 | 18 | 1.2 | 17.4 |
-| bge-large-en-v1.5 | 16.4 | 27.7 | 20.9 | 11.6 | 10.9 | 13.3 | 16.9 | 0.4 | 14.8 |
-| BM25 | 10.7 | 15.4 | 10.7 | 8.4 | 7.4 | 22.2 | 10.7 | 5.4 | 11.4 |
+<table>
+<thead>
+<tr>
+  <th align="left">Model</th>
+  <th align="center">Bio.</th>
+  <th align="center">Earth.</th>
+  <th align="center">Econ.</th>
+  <th align="center">Psy.</th>
+  <th align="center">Rob.</th>
+  <th align="center">Stack.</th>
+  <th align="center">Sus.</th>
+  <th align="center">Pony</th>
+  <th align="center">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left">MRE-T1</td>
+  <td align="center"><b>46.5</b></td>
+  <td align="center"><b>46</b></td>
+  <td align="center"><b>34.5</b></td>
+  <td align="center"><b>52.7</b></td>
+  <td align="center"><b>27.7</b></td>
+  <td align="center"><b>22.2</b></td>
+  <td align="center"><b>45.2</b></td>
+  <td align="center"><b>6.3</b></td>
+  <td align="center"><b>35.1</b></td>
+</tr>
+<tr>
+  <td align="left">Google-Gecko-Text_Embedding-004</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">33.2</td>
+</tr>
+<tr>
+  <td align="left">inf-retriever-v1-pro</td>
+  <td align="center">44.1</td>
+  <td align="center">42.2</td>
+  <td align="center">31.4</td>
+  <td align="center">43.1</td>
+  <td align="center">20.8</td>
+  <td align="center">21.4</td>
+  <td align="center">41.0</td>
+  <td align="center">0.4</td>
+  <td align="center">30.5</td>
+</tr>
+<tr>
+  <td align="left">gte-Qwen1.5-7B-instruct</td>
+  <td align="center">39.2</td>
+  <td align="center">36.1</td>
+  <td align="center">25.7</td>
+  <td align="center">42.3</td>
+  <td align="center">21.3</td>
+  <td align="center">23.5</td>
+  <td align="center">33.1</td>
+  <td align="center">1.3</td>
+  <td align="center">27.8</td>
+</tr>
+<tr>
+  <td align="left">SFR-Embedding-Mistral</td>
+  <td align="center">30.3</td>
+  <td align="center">37.0</td>
+  <td align="center">24.3</td>
+  <td align="center">47.7</td>
+  <td align="center">17.3</td>
+  <td align="center">14.5</td>
+  <td align="center">35.0</td>
+  <td align="center">2.0</td>
+  <td align="center">26.0</td>
+</tr>
+<tr>
+  <td align="left">GritLM-7B</td>
+  <td align="center">37.5</td>
+  <td align="center">40.3</td>
+  <td align="center">25.7</td>
+  <td align="center">34.4</td>
+  <td align="center">17.8</td>
+  <td align="center">20.1</td>
+  <td align="center">32.4</td>
+  <td align="center">0.0</td>
+  <td align="center">26.0</td>
+</tr>
+<tr>
+  <td align="left">e5-mistral-7b-instruct</td>
+  <td align="center">29.9</td>
+  <td align="center">36.3</td>
+  <td align="center">26.2</td>
+  <td align="center">46.7</td>
+  <td align="center">17.3</td>
+  <td align="center">14.5</td>
+  <td align="center">32.2</td>
+  <td align="center">1.1</td>
+  <td align="center">25.5</td>
+</tr>
+<tr>
+  <td align="left">voyage-large-2-instruct</td>
+  <td align="center">34.4</td>
+  <td align="center">35.4</td>
+  <td align="center">26.7</td>
+  <td align="center">41.6</td>
+  <td align="center">12.9</td>
+  <td align="center">12.8</td>
+  <td align="center">31.1</td>
+  <td align="center">1.3</td>
+  <td align="center">24.5</td>
+</tr>
+<tr>
+  <td align="left">(Google) text-embedding-preview0409</td>
+  <td align="center">30.9</td>
+  <td align="center">38.0</td>
+  <td align="center">21.9</td>
+  <td align="center">30.7</td>
+  <td align="center">12.9</td>
+  <td align="center">19.2</td>
+  <td align="center">25.7</td>
+  <td align="center">0.3</td>
+  <td align="center">22.4</td>
+</tr>
+<tr>
+  <td align="left">(OpenAI) text-embedding-3-large</td>
+  <td align="center">32.1</td>
+  <td align="center">31.4</td>
+  <td align="center">23.8</td>
+  <td align="center">34.2</td>
+  <td align="center">11.9</td>
+  <td align="center">10.7</td>
+  <td align="center">26.3</td>
+  <td align="center">0.0</td>
+  <td align="center">21.3</td>
+</tr>
+<tr>
+  <td align="left">Cohere-embed-english-v3.0</td>
+  <td align="center">31.5</td>
+  <td align="center">34.5</td>
+  <td align="center">18.9</td>
+  <td align="center">20.5</td>
+  <td align="center">9.9</td>
+  <td align="center">15.8</td>
+  <td align="center">15.2</td>
+  <td align="center">0.8</td>
+  <td align="center">18.4</td>
+</tr>
+<tr>
+  <td align="left">SBERT</td>
+  <td align="center">25.6</td>
+  <td align="center">34.1</td>
+  <td align="center">18.9</td>
+  <td align="center">15.8</td>
+  <td align="center">10.9</td>
+  <td align="center">15</td>
+  <td align="center">18</td>
+  <td align="center">1.2</td>
+  <td align="center">17.4</td>
+</tr>
+<tr>
+  <td align="left">bge-large-en-v1.5</td>
+  <td align="center">16.4</td>
+  <td align="center">27.7</td>
+  <td align="center">20.9</td>
+  <td align="center">11.6</td>
+  <td align="center">10.9</td>
+  <td align="center">13.3</td>
+  <td align="center">16.9</td>
+  <td align="center">0.4</td>
+  <td align="center">14.8</td>
+</tr>
+<tr>
+  <td align="left">BM25</td>
+  <td align="center">10.7</td>
+  <td align="center">15.4</td>
+  <td align="center">10.7</td>
+  <td align="center">8.4</td>
+  <td align="center">7.4</td>
+  <td align="center">22.2</td>
+  <td align="center">10.7</td>
+  <td align="center">5.4</td>
+  <td align="center">11.4</td>
+</tr>
+</tbody>
+</table>
 
 4、**Retrieval Pipelines on Long Documents**
 
-| Model | Bio. | Earth. | Econ. | Psy. | Rob. | Stack. | Sus. | Pony | Avg | 
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **MRE-T1-Pipeline (FAL + T1)** | **77.1** | 59.0 | **71.2** | 73.8 | 46.0 | **35.5** | **70.6** | **14.6** | **56.0** |
-| INF-X-Retriever (inf+retrieve) | 73.2 | **59.6** | 69.3 | **74.3** | **55.9** | 27.8 | 64.8 | 12.0 | 54.6 |
+<table>
+<thead>
+<tr>
+  <th align="left">Model</th>
+  <th align="center">Bio.</th>
+  <th align="center">Earth.</th>
+  <th align="center">Econ.</th>
+  <th align="center">Psy.</th>
+  <th align="center">Rob.</th>
+  <th align="center">Stack.</th>
+  <th align="center">Sus.</th>
+  <th align="center">Pony</th>
+  <th align="center">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="left"><b>MRE-T1-Pipeline (FAL + T1)</b></td>
+  <td align="center"><b>77.1</b></td>
+  <td align="center">59.0</td>
+  <td align="center"><b>71.2</b></td>
+  <td align="center">73.8</td>
+  <td align="center">46.0</td>
+  <td align="center"><b>35.5</b></td>
+  <td align="center"><b>70.6</b></td>
+  <td align="center"><b>14.6</b></td>
+  <td align="center"><b>56.0</b></td>
+</tr>
+<tr>
+  <td align="left">INF-X-Retriever (inf+retrieve)</td>
+  <td align="center">73.2</td>
+  <td align="center"><b>59.6</b></td>
+  <td align="center">69.3</td>
+  <td align="center"><b>74.3</b></td>
+  <td align="center"><b>55.9</b></td>
+  <td align="center">27.8</td>
+  <td align="center">64.8</td>
+  <td align="center">12.0</td>
+  <td align="center">54.6</td>
+</tr>
+</tbody>
+</table>
