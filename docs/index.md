@@ -1,7 +1,7 @@
 <h1 align="center">⚡ Mira-Reasoning-Retrieval</h1>
 
 <p align="center">
-  <strong>A Reasoning-Intensive Retrieval Pipeline: GRPO-Aligned Query Rewriting (MQR-A1) Meets Reasoning-Intensive Retrieval Model (MRE-T1)</strong>
+  <strong>GRPO-Aligned Rewriting (MQR-A1) × Reasoning Retrieval (MRE-T1) — Advancing Reasoning-Intensive Retrieval</strong>
 </p>
 
 <p align="center">
