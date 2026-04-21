@@ -1,7 +1,7 @@
 <h1 align="center">⚡ Mira-Reasoning-Retrieval</h1>
 
 <p align="center">
-  <strong>Reinforcement Learning-Driven Intent Alignment: Overcoming Surface Semantic Traps in Retrieval</strong>
+  <strong>A Reasoning-Intensive Retrieval Pipeline: GRPO-Aligned Query Rewriting (MQR-A1) Meets Reasoning-Intensive Retrieval Model (MRE-T1)</strong>
 </p>
 
 <p align="center">
