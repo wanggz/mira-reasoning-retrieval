@@ -1,4 +1,4 @@
-<h1 align="center">⚡ FAL-Aligner + MRE-T1 Pipeline</h1>
+<h1 align="center">⚡ MQR-A1 + MRE-T1 Pipeline</h1>
 
 <p align="center">
   <strong>Reinforcement Learning-Driven Intent Alignment: Overcoming Surface Semantic Traps in Retrieval</strong>
@@ -15,7 +15,7 @@
 
 ## 📖 Overview
 
-**FAL-Aligner** represents a paradigm shift in reasoning-intensive retrieval tasks. Conventional models and agentic pipelines rely heavily on query expansion and are prone to the superficial semantic trap—a scenario where negative samples exhibit high surface-level textual similarity to queries yet are logically mismatched.
+**MQR-A1** represents a paradigm shift in reasoning-intensive retrieval tasks. Conventional models and agentic pipelines rely heavily on query expansion and are prone to the superficial semantic trap—a scenario where negative samples exhibit high surface-level textual similarity to queries yet are logically mismatched.
 * Core mechanism: A multi-dimensional GRPO (Group Relative Policy Optimization) training framework.
 * Technical objective: To distill core retrieval intents, filter misleading noise, and achieve high-precision alignment with the MRE-T1 retriever.
 * Industrial standing: Currently ranks first on the BRIGHT Benchmark across both long-document and short-document tracks, outperforming sophisticated rerankers and existing alignment models.
@@ -24,7 +24,7 @@
 
 ## 🚀 Highlights
 
-The **FAL-Aligner** shifts the retrieval paradigm from simple additive expansion to reinforcement-learning-driven intent distillation:
+The **MQR-A1** shifts the retrieval paradigm from simple additive expansion to reinforcement-learning-driven intent distillation:
 
 * **Discriminative Feature Extraction**
   * Dynamically identifies and preserves the core intents within queries that yield high retrieval gains.
@@ -62,7 +62,7 @@ Our Multi-Dimensional Reward Function includes:
 
 ## 🏆 Performance
 
-**FAL-Aligner + MRE-T1** achieves state-of-the-art results on the rigorous BRIGHT Benchmark. The system demonstrates categorical dominance by securing the No. 1 position across all evaluated dimensions, including both short and long document tracks. Notably, our framework outperforms both existing query alignment models and complex, resource-heavy agentic pipelines, establishing a new performance frontier in reasoning-intensive retrieval.
+**MQR-A1 + MRE-T1** achieves state-of-the-art results on the rigorous BRIGHT Benchmark. The system demonstrates categorical dominance by securing the No. 1 position across all evaluated dimensions, including both short and long document tracks. Notably, our framework outperforms both existing query alignment models and complex, resource-heavy agentic pipelines, establishing a new performance frontier in reasoning-intensive retrieval.
 
 1、**Single-model Methods on Short Documents**
 
@@ -272,7 +272,7 @@ Our Multi-Dimensional Reward Function includes:
 </thead>
 <tbody>
 <tr>
-  <td align="left"><b>MRE-T1-Pipeline (FAL + T1)</b></td>
+  <td align="left"><b>MRE-T1-Pipeline (MQR-A1 + T1)</b></td>
   <td align="center"><b>86.7</b></td>
   <td align="center"><b>78.5</b></td>
   <td align="center">69.7</td>
@@ -658,7 +658,7 @@ Our Multi-Dimensional Reward Function includes:
 </thead>
 <tbody>
 <tr>
-  <td align="left"><b>MRE-T1-Pipeline (FAL + T1)</b></td>
+  <td align="left"><b>MRE-T1-Pipeline (MQR-A1 + T1)</b></td>
   <td align="center"><b>77.1</b></td>
   <td align="center">59.0</td>
   <td align="center"><b>71.2</b></td>

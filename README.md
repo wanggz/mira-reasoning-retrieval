@@ -1,4 +1,4 @@
-<h1 align="center">⚡ FAL-Aligner + MRE-T1 Pipeline</h1>
+<h1 align="center">⚡ MQR-A1 + MRE-T1 Pipeline</h1>
 
 <p align="center">
   <strong>Reinforcement Learning-Driven Intent Alignment: Overcoming Surface Semantic Traps in Retrieval</strong>
@@ -15,7 +15,7 @@
 
 ---
 
-**MRE-T1** (Mira Recruitment Embedding, Thought v1) is a reasoning-enhanced retrieval model and **MQR-A1** (Mira Query Rewriter, Alignment v1) is a GRPO-aligned query rewriter, both developed by [Forward AI Labs](https://www.mira.day/), a company specializing in recruitment AI agents. Combined as the **FAL-Aligner + MRE-T1** pipeline, our system achieves **No. 1** on the [BRIGHT Benchmark](https://brightbenchmark.github.io/) across all evaluated dimensions — including both short and long document tracks — and **No. 1** among single-model methods.
+**MRE-T1** (Mira Recruitment Embedding, Thought v1) is a reasoning-enhanced retrieval model and **MQR-A1** (Mira Query Rewriter, Alignment v1) is a GRPO-aligned query rewriter, both developed by [Forward AI Labs](https://www.mira.day/), a company specializing in recruitment AI agents. Combined as the **MQR-A1 + MRE-T1** pipeline, our system achieves **No. 1** on the [BRIGHT Benchmark](https://brightbenchmark.github.io/) across all evaluated dimensions — including both short and long document tracks — and **No. 1** among single-model methods.
 
 ## Key Results
 
